@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, {Fragment, useState, useEffect} from 'react';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { getName } from './apis';
+
+// Pages
+import Home from './screens/Home';
+import Details from './screens/Details';
+
+// Styles
 import './App.css';
 
-function App() {
+// App component
+const App = () => {
+
+  // User name is part of the app state
+  // so that it doesn't get changed every time the home component rerenders
+  const [userName, setName] = useState("");
+
+  // On first render get a random user name
+  useEffect(async () => {
+    const newName = await getName();
+    setName(newName);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Fragment>
+          <Routes>
+            <Route path="/" element={<Home name={userName}/>} />
+            <Route path="/details" element={<Details/>} />
+          </Routes>
+        </Fragment>
+      </Router>
   );
 }
 

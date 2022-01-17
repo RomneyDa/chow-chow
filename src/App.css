@@ -1,38 +1,325 @@
-.App {
+/* Fonts */
+@font-face {
+  font-family: ProximaNovaBold;
+  src: url("assets/fonts/Proxima-Nova-Bold.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: ProximaNova;
+  src: url("assets/fonts/ProximaNova.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: MonumentExtended;
+  src: url("assets/fonts/MonumentExtended-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Margin Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Main background color */
+body {
+  background-color: lightblue;
+}
+
+/* Home page */
+.home {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Logo link */
+.foodcrew-link {
+  width: 100%;
+  position: absolute;
   text-align: center;
+  top: 50px;
+}
+.foodcrew-link img {
+  height: 90px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* User Name */
+.welcome-name {
+  font-family: ProximaNovaBold;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Menu drawer */
+.MuiDrawer-root > .MuiPaper-root {
+  height: 69%;
+  overflow: visible;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bottom-drawer:hover {
+  cursor: pointer;
+}
+
+.drawer-area {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+/* "Puller" - little gray slot looking thing */
+/* .puller {
+  background-color: black;
+  height: 40;
+  width: 40;
+  height: 6;
+  background-color: #e0e0e0;
+  border-radius: 3;
+  position: "absolute";
+  top: 15;
+} */
+
+/* "MENU" TITLE ON DRAWER/ */
+.menu-title {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 1.6rem;
+  display: block;
+  align-self: center;
+  align-content: center;
+  font-family: ProximaNovaBold;
+}
+
+.menu-title:hover {
+  cursor: pointer;
+}
+
+.menu-title-closed {
+  color: #808080;
+}
+
+.menu-title-open {
+  color: black;
+}
+
+/* The div that contains all the content that is hidden when the menu is closed */
+.menu-content {
+  height: 100%;
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+  border: none;
+}
+
+/* "DELICIOUS TREATS" SUBTITLE ON DRAWER */
+.menu-subtitle {
+  font-family: ProximaNovaBold;
+  font-size: 1rem;
+  padding: 0;
+  text-align: center;
+}
+
+/* Menu chips div */
+.menu-chips {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: "row";
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
+/* The actual list of foods/beers/desserts */
+.list {
+  width: 100%;
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+
+/* LIST ITEM WITH NAME AND DESCRIPTION */
+.list-item {
+  display: block;
+  width: 92%;
+  background-color: white;
+  border: 1px solid white;
+  text-align: left;
+  font-family: ProximaNovaBold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.list-item:hover {
+  background-color: #eeeeee;
+  border: 1px solid #bbbbbb;
+}
+
+.list-item a {
+  color: black;
+  text-decoration: none;
+}
+
+.list-item a h3 {
+  font-size: 1.2rem;
+}
+
+.list-item a p {
+  margin-top: 5px;
+  color: gray;
+  font-size: 0.9rem;
+  width: 85%;
+  line-height: 1rem;
+  font-family: PrimaNova;
+}
+
+/* DASHED HORIZONTAL LINE */
+.dashed-line {
+  border: none;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    grey,
+    grey 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  width: 70%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* EMAIL BUTTON */
+.email-button {
+  height: 80px;
+  flex: 0 0 auto;
+  width: 90%;
+  max-width: 400px;
+
+  display: flex;
+  align-items: center;
+
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 0, 0),
+    rgb(31, 160, 240)
+  );
+  border-radius: 25px;
+  padding-left: 30px;
+  margin-bottom: 15px;
+
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.email-button img {
+  width: 30px;
+  margin-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.email-button div {
+  text-align: left;
+  font-family: sans-serif;
+}
+
+.email-button div p {
+  font-size: 1.1rem;
+}
+
+.email-button div h3 {
+  font-size: 1.1rem;
+}
+
+/* Drawer peek */
+/* 
+:root {
+  --drawer-peek: 56;
+}
+
+.drawer-peek-area {
+  position: absolute;
+  top: -(var(--drawer-peek));
+  height: var(--drawer-peek);
+  border-top-left-radius: 12;
+  border-top-right-radius: 12;
+  visibility: visible;
+  right: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.puller {
+  width: 50;
+  height: 10;
+  background-color: #e0e0e0;
+  border-radius: 3;
+  position: "absolute";
+  top: 20;
+} */
+
+/* Details page */
+.highlight {
+  font-family: MonumentExtended, sans-serif;
+  font-size: 1.5rem;
+}
+
+.details-wrapper {
+  background-color: white;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.details {
+  font-family: MonumentExtended, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
+  text-align: left;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  padding: 10px;
+  margin-top: 130px;
+}
+
+.details > h3 {
+  font-family: ProximaNovaBold;
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.details > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+
+.details > p {
+  padding: 10px;
+}
+
+.confidential {
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  margin: auto;
 }
