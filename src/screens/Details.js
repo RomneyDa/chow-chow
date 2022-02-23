@@ -43,7 +43,7 @@ const Details = () => {
 
       <p> 
       For food: <a 
-        target="_blank" rel="noopener" href="https://random-data-api.com/api/food/random_food:" >
+        target="_blank" rel="noopener noreferrer" href="https://random-data-api.com/api/food/random_food:" >
           Random Food API
         </a>. Fields: dish, description.
       </p>

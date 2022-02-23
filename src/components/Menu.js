@@ -55,7 +55,7 @@ const ListView = (props) => {
             <ul>
                 {(viewing === "desserts" ? desserts : (viewing === "beers" ? beers : foods)).map((item) =>
                     <li key={item.id} className="list-item">
-                        <a href={`https://www.google.com/search?q=${item.name}%20${item.description}`} rel="noopener" target="_blank">
+                        <a href={`https://www.google.com/search?q=${item.name}%20${item.description}`} rel="noopener noreferrer" target="_blank">
                             <h3>{item.name}</h3>
                             <p>{item.description}</p>
                         </a>

@@ -8,7 +8,7 @@ const FoodCrewLink = (props) => {
   return (
     <div className="foodcrew-link">
       <Link to={to}>
-        <img src={logo} />
+        <img src={logo} alt="logo"/>
       </Link>
     </div>
   );
