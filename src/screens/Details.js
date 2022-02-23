@@ -34,16 +34,16 @@ const Details = () => {
         The home screen should look like the below mockup. It displays the user's name and a menu drawer. For name, get the first_name 
         from this <a href="https://reqres.in/api/users/1">Fake User API</a> (first_name field).
       </p>
-      <img src={HomeImg} height="500px"/>
+      <img src={HomeImg} alt="Home" height="500px"/>
       
       
       <p>The menu drawer should look like the below mockup. It shows lists of *four values* for three different food items: food, desserts, and beer. You can switch between them by clicking selector pills. The selected pill should have a slightly gray background, while the nonselected pills should blend with the drawer background.
       </p>
-      <img src={MenuImg} height="500px"/>
+      <img src={MenuImg} alt="Menu" height="500px"/>
 
       <p> 
       For food: <a 
-        target="_blank" href="https://random-data-api.com/api/food/random_food:" >
+        target="_blank" rel="noopener" href="https://random-data-api.com/api/food/random_food:" >
           Random Food API
         </a>. Fields: dish, description.
       </p>
